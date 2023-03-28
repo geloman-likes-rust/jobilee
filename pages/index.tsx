@@ -2,7 +2,20 @@ import Head from 'next/head'
 import style from '@/styles/Home.module.css'
 import Link from 'next/link'
 
-export default function Home({ menu } : any) {
+type Item = {
+  id: number
+  category: string
+  image: string
+  param: string
+}
+
+type Menu = Array<Item>
+
+type Prop = {
+  menu: Menu
+}
+
+export default function Home({ menu } : Prop) {
   return (
     <>
       <Head>
@@ -13,7 +26,7 @@ export default function Home({ menu } : any) {
       </Head>
       <main className={style.grid}>
         {
-          menu.data.map( (item : any) => {
+          menu.map((item : Item) => {
             return (
               <Link key={item.category} href={item.param}>
               <div className={style.card}>
@@ -32,11 +45,17 @@ export default function Home({ menu } : any) {
   )
 }
 
-export async function getStaticProps() {
+async function getMenu() : Promise<Menu> {
   const response = await fetch("https://api-jollibee-menu.vercel.app/menu")
+  const { data } = await response.json()
+  return data
+}
+
+export async function getStaticProps() {
+  const menu: Menu = await getMenu()
   return {
     props: {
-      menu: await response.json()
+      menu
     }
   }
 }
