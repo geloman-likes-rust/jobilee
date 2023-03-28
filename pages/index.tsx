@@ -1,12 +1,6 @@
 import Head from 'next/head'
-//import Image from 'next/image'
 import style from '@/styles/Home.module.css'
-//
-
-import { Inter } from 'next/font/google'
 import Link from 'next/link'
-
-//const inter = Inter({ subsets: ['latin'] })
 
 export default function Home({ menu } : any) {
   return (
@@ -21,7 +15,7 @@ export default function Home({ menu } : any) {
         {
           menu.data.map( (item : any) => {
             return (
-              <Link href={item.param}>
+              <Link key={item.category} href={item.param}>
               <div className={style.card}>
                 <div className={style.image}>
                   <img src={item.image} alt={item.category} />
