@@ -1,0 +1,14 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: #fff url(https://responsive.tillster.com/responsive/jb-ph/1671018411/img/jb-desktop-bg.png) repeat;
+  background-size: auto;
+  padding-inline: 20px;
+}
