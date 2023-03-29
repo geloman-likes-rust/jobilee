@@ -11,7 +11,7 @@ const categories: Array<string> = [
 
 const params: Array<string> = [
   "best-sellers", "new-products", "family-meals", "breakfast",
-  "chickenjoy", "burgers", "Jolly Spaghetti", "burger-steak",
+  "chickenjoy", "burgers", "jolly-spaghetti", "burger-steak",
   "super-meals", "chicken-sandwich", "jolly-hotdog-pies", "palabok",
   "fries-sides", "desserts", "Beverages", "jolly-kiddie-meal"
 ]
