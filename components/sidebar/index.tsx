@@ -24,7 +24,7 @@ export default function Sidebar({ activeLink }: any) {
         let isActive = params.indexOf(activeLink) === index
         console.log(index)
         return (
-          <Link href={params[index]}>
+          <Link key={category} href={params[index]}>
             <li className={`${style.category} ${isActive ? style.active : '' }`}>
               <span>{category}</span>
               <CaretRight weight="bold" size={32} />
