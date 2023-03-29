@@ -132,6 +132,14 @@
   }
 }
 
+@media (max-width: 500px) {
+  .menu {
+    margin-bottom: 60px;
+    padding-inline: 20px;
+  }
+}
+
+
 @media (max-width: 450px) {
   .menu {
     display: block;
@@ -173,7 +181,7 @@
 
 @media (max-width: 300px) {
   .details {
-    height: 90px;
+    height: 80px;
   }
   .description {
     font-size: 10px;

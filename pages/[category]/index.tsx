@@ -1,6 +1,7 @@
 import Sidebar from "@/components/sidebar"
 import { useRouter } from "next/router"
 import style from "./style.module.css"
+import Navbar from "@/components/navbar"
 
 const params: Array<string> = [
   "best-sellers", "new-products", "family-meals", "breakfast",
@@ -27,26 +28,29 @@ export default function Category({ items }: Props) {
   const { category } = router.query;
   console.log(category)
   return (
-    <div className={style.menu}>
-      <span className={style.sidebar}>
-        <Sidebar activeLink={category} />
-      </span>
-      <div className={style.grid}>
-        {items.map((item: Item) => {
-          return (
-            <div key={`${item.id}--${item.description}`} className={style.card}>
-              <div className={style.image}>
-                <img draggable={false} src={item.img} alt={`${item.id}--${item.description}`} />
+    <>
+      <Navbar />
+      <div className={style.menu}>
+        <span className={style.sidebar}>
+          <Sidebar activeLink={category} />
+        </span>
+        <div className={style.grid}>
+          {items.map((item: Item) => {
+            return (
+              <div key={`${item.id}--${item.description}`} className={style.card}>
+                <div className={style.image}>
+                  <img draggable={false} src={item.img} alt={`${item.id}--${item.description}`} />
+                </div>
+                <div className={style.details}>
+                  <div className={style.description}>{item.description}</div>
+                  <div className={style.price}>Starts at ₱ {`${item.price}.00`}</div>
+                </div>
               </div>
-              <div className={style.details}>
-                <div className={style.description}>{item.description}</div>
-                <div className={style.price}>Starts at ₱ {`${item.price}.00`}</div>
-              </div>
-            </div>
-          )
-        })}
+            )
+          })}
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 
