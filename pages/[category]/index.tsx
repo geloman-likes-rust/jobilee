@@ -6,7 +6,7 @@ const params: Array<string> = [
   "best-sellers", "new-products", "family-meals", "breakfast",
   "chickenjoy", "burgers", "jolly-spaghetti", "burger-steak",
   "super-meals", "chicken-sandwich", "jolly-hotdog-pies", "palabok",
-  "fries-sides", "desserts", "Beverages", "jolly-kiddie-meal"
+  "fries-sides", "desserts", "beverages", "jolly-kiddie-meal"
 ]
 
 type Item = {
