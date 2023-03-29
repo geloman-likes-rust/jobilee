@@ -24,23 +24,25 @@ export default function Home({ menu } : Prop) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={style.grid}>
-        {
-          menu.map((item : Item) => {
-            return (
-              <Link key={item.category} href={item.param}>
-              <div className={style.card}>
-                <div className={style.image}>
-                  <img src={item.image} alt={item.category} />
+      <div className={style.home}>
+        <main className={style.grid}>
+          {
+            menu.map((item : Item) => {
+              return (
+                <Link key={item.category} href={item.param}>
+                <div className={style.card}>
+                  <div className={style.image}>
+                    <img src={item.image} alt={item.category} />
+                  </div>
+                  <h3 className={style.category}>{item.category}</h3>
+                  <div className={style.select}>select</div>
                 </div>
-                <h3 className={style.category}>{item.category}</h3>
-                <div className={style.select}>select</div>
-              </div>
-            </Link>
-            )
-          })
-        }
-      </main>
+              </Link>
+              )
+            })
+          }
+        </main>
+      </div>
     </>
   )
 }
