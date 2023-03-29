@@ -1,0 +1,181 @@
+.menu {
+  display: flex;
+  min-height: 100vh;
+  max-width: 1200px;
+  padding-block: 20px;
+  margin-inline: auto;
+  background: #FFFBEB;
+}
+
+.sidebar {
+  margin-left: 30px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: sticky;
+  top: 20px;
+  display: inline-block;
+}
+
+.grid {
+  display: grid;
+  padding-block: 30px;
+  gap: 10px;
+  align-content: start;
+  margin-inline: auto;
+  grid-template-columns: repeat(3, 250px);
+}
+
+.image {
+  height: 100px;
+  margin-block: 30px;
+  max-width: 80%;
+  margin-inline: auto;
+  display: grid;
+  place-content: center;
+}
+
+.details {
+  padding-bottom: 15px;
+  padding-top: 10px;
+  padding-inline: 15px;
+  background: #E4163D;
+  color: #fff;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.price {
+  font-size: 15px;
+}
+
+.card {
+  width: 100%;
+  user-select: none;
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 
+  1px 1px 6px 0px rgba(0,0,0, 0.2),
+  -1px 1px 4px 0px rgba(0,0,0, 0.15),
+  0px 0px 2px 0px rgba(0,0,0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(2, 250px);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  .menu {
+    background: none;
+  }
+  .sidebar {
+    display: none;
+  }
+  .grid {
+    grid-template-columns: repeat(3, 250px);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: repeat(2, 300px);
+  }
+  .image {
+    max-width: 65%;
+  }
+}
+
+@media (max-width: 650px) {
+  .grid {
+    grid-template-columns: repeat(2, 250px);
+  }
+
+  .image {
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 538px) {
+  .grid {
+    grid-template-columns: repeat(2, 200px);
+  }
+  .details {
+    height: 100px;
+  }
+  .description {
+    font-size: 14px;
+  }
+  .price {
+    font-size: 13px;
+  }
+  .image {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 450px) {
+  .menu {
+    display: block;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .image {
+    height: 80px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 430px) {
+  .details {
+    height: 120px;
+  }
+}
+
+@media (max-width: 360px) {
+  .details {
+    height: 130px;
+  }
+}
+
+@media (max-width: 345px) {
+  .details {
+    height: 120px;
+  }
+  .description {
+    font-size: 12px;
+  }
+  .price {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 300px) {
+  .details {
+    height: 90px;
+  }
+  .description {
+    font-size: 10px;
+  }
+}
