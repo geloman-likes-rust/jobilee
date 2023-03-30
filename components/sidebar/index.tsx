@@ -17,12 +17,10 @@ const params: Array<string> = [
 ]
 
 export default function Sidebar({ activeLink }: any) {
-  console.log(activeLink)
   return (
     <ul className={style.sidebar}>
       {categories.map((category, index) => {
         let isActive = params.indexOf(activeLink) === index
-        console.log(index)
         return (
           <Link key={category} href={params[index]}>
             <li className={`${style.category} ${isActive ? style.active : '' }`}>

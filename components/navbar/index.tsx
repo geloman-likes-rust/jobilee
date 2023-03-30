@@ -4,7 +4,6 @@ import { House } from "phosphor-react"
 import usePageScroll from "../../hooks/usePageScroll"
 export default function Navbar() {
   const isScrollingDown = usePageScroll()
-  console.log(isScrollingDown)
   return (
     <div className={`${style.navbar} ${isScrollingDown ? style.hide : ""}`}>
       <ul className={style.navlinks}>
