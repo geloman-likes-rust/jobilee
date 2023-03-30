@@ -34,9 +34,9 @@ export default function Category({ items }: Props) {
       </Head>
       <Navbar />
       <div className={style.menu}>
-        <span className={style.sidebar}>
+        <div className={style.sidebar}>
           <Sidebar activeLink={category} />
-        </span>
+        </div>
         <div className={style.grid}>
           {items.map((item: Item) => {
             return (
