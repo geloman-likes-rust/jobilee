@@ -2,6 +2,7 @@ import Sidebar from "@/components/sidebar"
 import { useRouter } from "next/router"
 import style from "./style.module.css"
 import Navbar from "@/components/navbar"
+import Head from "next/head"
 
 const params: Array<string> = [
   "best-sellers", "new-products", "family-meals", "breakfast",
@@ -26,14 +27,16 @@ type Props = {
 export default function Category({ items }: Props) {
   const router = useRouter()
   const { category } = router.query;
-  console.log(category)
   return (
     <>
+      <Head>
+        <title>{category}</title>
+      </Head>
       <Navbar />
       <div className={style.menu}>
-        <span className={style.sidebar}>
+        <div className={style.sidebar}>
           <Sidebar activeLink={category} />
-        </span>
+        </div>
         <div className={style.grid}>
           {items.map((item: Item) => {
             return (
