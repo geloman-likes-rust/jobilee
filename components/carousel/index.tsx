@@ -10,13 +10,17 @@ type Category = {
   param: string
 }
 
+type Props = {
+  activeLink: string
+}
+
 async function getCategories() {
   const response = await fetch("https://api-jollibee-menu.vercel.app/menu")
   const { data } = await response.json()
   return data
 }
 
-export default function Carousel({activeLink}) {
+export default function Carousel({activeLink}: Props) {
   const [categories, setCategories] = useState([])
   useEffect(() => {
     (async function() {
