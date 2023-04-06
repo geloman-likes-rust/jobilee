@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import style from "./style.module.css"
 import Navbar from "@/components/navbar"
 import Head from "next/head"
+import Carousel from "@/components/carousel"
 
 const params: Array<string> = [
   "best-sellers", "new-products", "family-meals", "breakfast",
@@ -33,6 +34,9 @@ export default function Category({ items }: Props) {
         <title>{category}</title>
       </Head>
       <Navbar />
+      <div className={style.carousel}>
+        <Carousel activeLink={String(category)} />
+      </div>
       <div className={style.menu}>
         <div className={style.sidebar}>
           <Sidebar activeLink={category} />
