@@ -38,7 +38,7 @@ export default function Carousel({activeLink}: Props) {
                 <Link href={category.param}>
                   <div className={style.content}>
                     <div className={style.image}>
-                      <img src={category.image} alt={category.category} />
+                      <img draggable={false} src={category.image} alt={category.category} />
                     </div>
                     <p className={style.category}>{category.category}</p>
                   </div>
