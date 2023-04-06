@@ -16,6 +16,11 @@
   align-self: flex-start;
 }
 
+.carousel {
+  display: none;
+  z-index: 999;
+}
+
 .grid {
   display: grid;
   padding-block: 30px;
@@ -85,6 +90,11 @@
 @media (max-width: 900px) {
   .menu {
     background: none;
+    margin-top: 90px;
+  }
+
+  .carousel {
+    display: block;
   }
   .sidebar {
     display: none;
@@ -143,6 +153,7 @@
 @media (max-width: 450px) {
   .menu {
     display: block;
+    margin-top: 70px;
   }
 
   .grid {
