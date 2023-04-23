@@ -29,10 +29,10 @@ export default function Home({ menu } : Prop) {
           {
             menu.map((item : Item) => {
               return (
-                <Link key={item.category} href={item.param}>
+                <Link draggable={false} key={item.category} href={item.param}>
                 <div className={style.card}>
                   <div className={style.image}>
-                    <img src={item.image} alt={item.category} />
+                    <img draggable={false} src={item.image} alt={item.category} />
                   </div>
                   <h3 className={style.category}>{item.category}</h3>
                   <div className={style.select}>select</div>
