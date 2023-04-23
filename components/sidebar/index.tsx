@@ -2,32 +2,30 @@ import Link from "next/link"
 import style from "./style.module.css"
 import { CaretRight } from "phosphor-react"
 
-const categories: Array<string> = [
-  "Best Sellers", "New Products", "Family Meals", "Breakfast",
-  "Chickenjoy", "Burgers", "Jolly Spaghetti", "Burger Steak",
-  "Super Meals", "Chicken Sandwich", "Jolly Hotdog & Pies", "Palabok",
-  "Fries & Sides", "Desserts", "Beverages", "Jolly Kiddie Meal"
-]
+type Props = {
+  menu: {
+    id: number
+    category: string
+    image: string
+    param: string
+  }[]
+  activeLink: string | any
+}
 
-const params: Array<string> = [
-  "best-sellers", "new-products", "family-meals", "breakfast",
-  "chickenjoy", "burgers", "jolly-spaghetti", "burger-steak",
-  "super-meals", "chicken-sandwich", "jolly-hotdog-pies", "palabok",
-  "fries-sides", "desserts", "beverages", "jolly-kiddie-meal"
-]
-
-export default function Sidebar({ activeLink }: any) {
+export default function Sidebar({ activeLink, menu }: Props) {
   return (
     <ul className={style.sidebar}>
-      {categories.map((category, index) => {
-        let isActive = params.indexOf(activeLink) === index
+      {menu.map((item) => {
         return (
-          <Link key={category} href={params[index]}>
-            <li className={`${style.category} ${isActive ? style.active : '' }`}>
-              <span>{category}</span>
-              <CaretRight weight="bold" size={32} />
+            <li key={item.param} className={`${style.category} ${activeLink === item.param ? style.active : '' }`}>
+              <Link draggable={false} href={item.param}>
+                <div className={style.image}>
+                  <img src={item.image} alt={item.param}/>
+                </div>
+                <span>{item.category}</span>
+                <CaretRight weight="bold" size={32} />
+              </Link>
             </li>
-          </Link>
         )
       })}
     </ul>

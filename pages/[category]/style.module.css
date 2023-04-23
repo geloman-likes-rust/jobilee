@@ -5,6 +5,10 @@
   padding-block: 20px;
   margin-inline: auto;
   background: #FFFBEB;
+  box-shadow: 
+  rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, 
+  rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  margin-bottom: 20px;
 }
 
 .sidebar {
@@ -12,18 +16,13 @@
   flex-grow: 0;
   flex-shrink: 0;
   position: sticky;
-  top: 80px;
-  align-self: flex-start;
-}
-
-.carousel {
-  display: none;
-  z-index: 999;
+  top: 90px;
+  align-self: start;
 }
 
 .grid {
   display: grid;
-  padding-block: 30px;
+  margin-block: 10px;
   gap: 10px;
   align-content: start;
   margin-inline: auto;
@@ -68,9 +67,8 @@
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 
-  1px 1px 6px 0px rgba(0,0,0, 0.2),
-  -1px 1px 4px 0px rgba(0,0,0, 0.15),
-  0px 0px 2px 0px rgba(0,0,0, 0.1);
+  rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, 
+  rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   overflow: hidden;
   position: relative;
 }
@@ -78,6 +76,33 @@
 .image img {
   width: 100%;
   object-fit: cover;
+  transition: transform 150ms ease;
+}
+
+.card:hover .image img {
+  transform: scale(1.05);
+}
+
+.card:hover .details .price {
+  animation: shake 300ms ease 500ms;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  50% {
+    transform: rotateZ(10deg);
+  }
+  75% {
+    transform: rotateZ(-10deg);
+  }
+  100% {
+    transform: rotateZ(10deg);
+  }
 }
 
 @media (max-width: 1100px) {
@@ -91,17 +116,23 @@
   .menu {
     background: none;
     margin-top: 90px;
+    box-shadow: unset;
   }
 
-  .carousel {
-    display: block;
-  }
   .sidebar {
-    display: none;
+    position: fixed;
+    top: 65px;
+    margin-left: 0;
+    width: 100%;
+    align-self: start;
+    padding-block: 0;
+    z-index: 999;
   }
+
   .grid {
     grid-template-columns: repeat(3, 250px);
     gap: 10px;
+    margin-top: 50px;
   }
 }
 
@@ -147,8 +178,11 @@
     margin-bottom: 60px;
     padding-inline: 20px;
   }
+  .sidebar {
+    top: 0;
+    left: 0;
+  }
 }
-
 
 @media (max-width: 450px) {
   .menu {
