@@ -1,8 +1,8 @@
-import Sidebar from "@/components/sidebar"
-import { useRouter } from "next/router"
-import style from "./style.module.css"
-import Navbar from "@/components/navbar"
 import Head from "next/head"
+import Sidebar from "@/components/sidebar"
+import Navbar from "@/components/navbar"
+import style from "./style.module.css"
+import { useRouter } from "next/router"
 
 type Items = {
   id: number
