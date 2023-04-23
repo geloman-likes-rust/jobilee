@@ -17,8 +17,8 @@ export default function Sidebar({ activeLink, menu }: Props) {
     <ul className={style.sidebar}>
       {menu.map((item) => {
         return (
-            <li className={`${style.category} ${activeLink === item.param ? style.active : '' }`}>
-              <Link draggable={false} key={item.param} href={item.param}>
+            <li key={item.param} className={`${style.category} ${activeLink === item.param ? style.active : '' }`}>
+              <Link draggable={false} href={item.param}>
                 <div className={style.image}>
                   <img src={item.image} alt={item.param}/>
                 </div>
