@@ -1,31 +1,34 @@
 .sidebar {
   max-width: 244px;
   background: white;
-  box-shadow: 
-  0px 2px 10px 0px rgba(0,0,0, 0.1),
-  0px 2px 5px 0px rgba(0,0,0,0.3);
-  margin-block: 30px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .sidebar li {
-  padding: 16px 20px;
   font-size: 18px;
   font-weight: bold;
   list-style: none;
-  color: black;
   position: relative;
+}
+
+.sidebar li a {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  padding: 18px 20px;
+  color: black;
 }
 
 .sidebar li span {
-  margin-inline: 20px;
+  margin-inline: 15px;
 }
 
 .sidebar li:hover {
-  color: #fB0014;
+  background: rgba(60, 64, 67, 0.10);
   transition: 250ms ease;
+}
+
+.sidebar li:hover > a {
+  color: #fB0014;
 }
 
 .sidebar li::before {
@@ -41,10 +44,96 @@
   text-decoration: none;
 }
 
-.category.active {
+.category.active a {
   color: #fB0014;
 }
 
 .category.active::before {
-  background: #fB0014;
+  background: #E4163D;
+}
+
+.category .image {
+  display: none;
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.category .image img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .category.active::before {
+    content: '';
+    position: absolute;
+    top: unset;
+    bottom: 0;
+    height: 5px;
+    width: 100%;
+  }
+  .sidebar {
+    display: flex;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: scroll;
+  }
+  .sidebar::-webkit-scrollbar {
+    background: rgba(228, 22, 61, 0.30);
+  }
+
+  .sidebar::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 -15px 10px rgba(228, 22, 61, 0.9);
+    border-radius: 10px;
+  }
+
+  .sidebar .category {
+    margin: 0;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+  .sidebar .category .image {
+    outline: 5px solid rgba(60, 64, 67, 0.4);
+  }
+
+  .sidebar .category.active .image {
+    outline: 5px solid #E4163D;
+    border: 2px solid rgba(60, 64, 67, 0.3);
+  }
+  .sidebar .category:hover {
+    transition: unset;
+  }
+  .sidebar .category.active a {
+    color: #fB0014;
+  }
+  .sidebar .category svg {
+    display: none;
+  }
+  .sidebar .category a {
+    flex-direction: column;
+    align-items: center;
+    color: rgba(60, 64, 67, 0.7);
+  }
+  .sidebar .category span {
+    margin-top: 15px;
+  }
+  .sidebar .category .image {
+    display: block;
+  }
+  .sidebar .category.active::before {
+    animation: 150ms slide-in ease-in;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
