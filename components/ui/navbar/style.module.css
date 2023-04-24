@@ -23,6 +23,11 @@
   height: 100%;
   display: flex;
   align-items: center;
+  padding-inline: 10px;
+}
+
+.navlinks .navlink:hover {
+  background: rgba(0,0,0, 0.1);
 }
 
 .navlinks a {
