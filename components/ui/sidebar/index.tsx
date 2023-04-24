@@ -20,7 +20,7 @@ export default function Sidebar({ activeLink, menu }: Props) {
             <li key={item.param} className={`${style.category} ${activeLink === item.param ? style.active : '' }`}>
               <Link draggable={false} href={item.param}>
                 <div className={style.image}>
-                  <img src={item.image} alt={item.param}/>
+                  <img draggable={false} src={item.image} alt={item.param}/>
                 </div>
                 <span>{item.category}</span>
                 <CaretRight weight="bold" size={32} />
