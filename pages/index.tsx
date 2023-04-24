@@ -15,9 +15,9 @@ export default function HomePage({ menu } : Props) {
   return (
     <>
       <Head>
-        <title>cookie ko</title>
+        <title>jobilee</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/cookie.svg" />
+        <link rel="icon" href="/burger.svg" />
       </Head>
       <Home menu={menu} />
     </>
