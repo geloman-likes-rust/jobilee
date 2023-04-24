@@ -1,7 +1,7 @@
 import Link from "next/link"
 import style from "./style.module.css"
 import { House } from "phosphor-react"
-import usePageScroll from "../../hooks/usePageScroll"
+import usePageScroll from "@/hooks/usePageScroll"
 export default function Navbar() {
   const isScrollingDown = usePageScroll()
   return (
