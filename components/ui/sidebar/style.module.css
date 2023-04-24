@@ -24,11 +24,6 @@
 
 .sidebar li:hover {
   background: rgba(60, 64, 67, 0.10);
-  transition: 250ms ease;
-}
-
-.sidebar li:hover > a {
-  color: #fB0014;
 }
 
 .sidebar li::before {
@@ -103,9 +98,6 @@
   .sidebar .category.active .image {
     outline: 5px solid #E4163D;
     border: 2px solid rgba(60, 64, 67, 0.3);
-  }
-  .sidebar .category:hover {
-    transition: unset;
   }
   .sidebar .category.active a {
     color: #fB0014;
