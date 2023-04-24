@@ -27,6 +27,7 @@ export default function CategoryPage({ items, menu }: Props) {
     <>
       <Head>
         <title>{category}</title>
+        <link rel="icon" href="/fries.svg" />
       </Head>
       <Navbar />
       <Category items={items} menu={menu} />
