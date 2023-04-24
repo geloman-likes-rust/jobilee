@@ -1,5 +1,5 @@
 import Head from "next/head"
-import Navbar from "@/components/navbar"
+import Navbar from "@/components/ui/navbar"
 import Category from "@/components/pages/category"
 import { useRouter } from "next/router"
 import getCategory from "@/utils/api-call/getCategory"

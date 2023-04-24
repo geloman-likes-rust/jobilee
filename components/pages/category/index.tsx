@@ -1,6 +1,6 @@
 import style from "./style.module.css"
 import { useRouter } from "next/router"
-import Sidebar from "../../sidebar"
+import Sidebar from "../../ui/sidebar"
 
 type Props = {
   menu: {
