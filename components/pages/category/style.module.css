@@ -71,10 +71,11 @@
   rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   overflow: hidden;
   position: relative;
+  transition: box-shadow 200ms ease;
 }
 
 .card:hover {
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 20px, rgba(0, 0, 0, 0.19) 0px 6px 6px;
 }
 
 .image img {
