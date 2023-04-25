@@ -17,7 +17,7 @@ export default function HomePage({ menu } : Props) {
       <Head>
         <title>jobilee</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/burger.svg" />
+        <link rel="icon" href="/fries.svg" />
       </Head>
       <Home menu={menu} />
     </>
